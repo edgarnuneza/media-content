@@ -1,0 +1,23 @@
+<div class="header">
+    <h1 class="title1">Lista de usuarios</h1>
+    <button class="btn">Agregar usuario</button>
+</div>
+
+<ul class="user-list">
+    <li class="table-row">
+        <div class="col-title column-name main-font">User Name</div>
+        <div class="col-title column-name main-font">Nombre</div>
+        <div class="col-title column-name main-font">Email</div>
+        <div class="col-title column-name main-font">Fecha Creación</div>
+        <div class="col-title column-name main-font">Privilegio</div>
+        <div class="col-title column-name main-font">Operaciones</div>
+    </li>
+    <li *ngFor="let user of users" class="table-row">
+        <div class="value font-2">{{ user.userName }}</div>
+        <div class="value font-2">{{ user.email }}</div>
+        <div class="value font-2">{{ getDate(user.createdAt) }}</div>
+        <div class="value font-2">{{ user.privilege }}</div>
+        <div class="value font-2">op</div>
+        <div class="value font-2">op</div>
+    </li>
+</ul>

@@ -1,0 +1,27 @@
+$gap-space: 10px;
+
+:host{
+    display: grid;
+    overflow-y: auto;
+    grid-row: 2;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: $gap-space;
+    width: 99%;
+    margin: 0 auto;
+}
+
+.img-content {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.image-card {
+    width: 100%;
+    margin-top: $gap-space;
+    cursor: pointer;
+}
+
+img {
+    width: 230px;
+}

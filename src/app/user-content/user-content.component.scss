@@ -1,0 +1,51 @@
+@import '../../styles/helpers/variables';
+@import '../../styles/base/fonts';
+@import '../../styles/base/general';
+
+$backgroundColor: rgb(247, 247, 247);
+
+:host {
+    display: block;
+    background-color: $backgroundColor;
+}
+
+.header {
+    .title1{
+        display: inline-block;
+    }
+}
+
+.btn {
+    background-color: red;
+    border-radius: 5px;
+}
+
+.user-list {
+    box-sizing: border-box;
+    padding: 1.3rem 1rem 0.8rem 1.5rem;
+    background-color: $primaryColor;
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 0.8em;
+}
+
+.col-title {
+    margin-bottom: 1em;
+}
+
+.column-name {
+    color: rgb(167, 167, 167);
+    font-weight: bold;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.value {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color: rgb(119, 118, 136);
+    margin-bottom: 0.5em;
+}

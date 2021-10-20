@@ -1,0 +1,30 @@
+@import '../../styles/helpers/variables';
+@import '../../styles/base/fonts';
+
+:host {
+  grid-column: 1;
+  display: block;
+  color: $textColor;
+  grid-row: 2;
+}
+
+.list-options {
+  margin: 0 auto;
+  height: 100%;
+}
+
+.navbar-option {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  margin: 0.3em;
+  margin-right: 1em;
+  border-radius: 0 20px 20px 0;
+  &:hover {
+    background-color: $hoverFocusColor;
+  }
+}
+
+.selected {
+  background-color: $secondaryColor;
+  color: $textFocus;
+}
