@@ -16,11 +16,15 @@ export class MediaContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.totalColumns = this.getTotalColumns();
+    this.placeImages();
   }
 
   ngAfterViewInit(): void {
-    this.placeImages();
+    window.addEventListener('resize', () => {
+      this.removeImages();
+      this.placeImages();
+    });
+    // this.removeImages();
   }
 
   getTotalColumns(): number {
@@ -30,6 +34,14 @@ export class MediaContentComponent implements OnInit {
   }
 
   placeImages(): void {
+    this.totalColumns = this.getTotalColumns();
+
+    for (let i = 1; i <= this.totalColumns; i++) {
+      let div = this.renderer.createElement("div");
+      this.renderer.setAttribute(div, "id", `column-${i}`);
+      this.renderer.addClass(div, "img-content");
+      this.renderer.appendChild(document.querySelector("app-media-content"), div);
+    }
 
     for (const [i, image] of this.images.entries()) {
 
@@ -43,8 +55,6 @@ export class MediaContentComponent implements OnInit {
         alert("Hola");
       });
     }
-
-
 
   }
 
@@ -62,5 +72,13 @@ export class MediaContentComponent implements OnInit {
 
   createId(value: number): string {
     return `column-${value}`;
+  }
+
+  removeImages() {
+    for (let i = 1; i <= this.totalColumns; i++) {
+      let div = document.querySelector(`#column-${i}`);
+      this.renderer.removeChild(document.querySelector("app-media-content"), div, false);
+    }
+
   }
 }

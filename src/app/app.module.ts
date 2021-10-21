@@ -7,6 +7,8 @@ import { MediaContentComponent } from './media-content/media-content.component';
 import { SecondNavbarComponent } from './second-navbar/second-navbar.component';
 import { UserContentComponent } from './user-content/user-content.component';
 import { LoginComponent } from './login/login.component';
+import { ImageModalComponent } from './image-modal/image-modal.component';
+import { UserModalComponent } from './user-modal/user-modal.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { LoginComponent } from './login/login.component';
     MediaContentComponent,
     SecondNavbarComponent,
     UserContentComponent,
-    LoginComponent
+    LoginComponent,
+    ImageModalComponent,
+    UserModalComponent
   ],
   imports: [
     BrowserModule

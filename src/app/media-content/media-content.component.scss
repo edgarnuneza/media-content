@@ -1,13 +1,17 @@
+@import '../../styles/helpers/variables';
+@import '../../styles/base/fonts';
+
 $gap-space: 10px;
 
 :host{
     display: grid;
     overflow-y: auto;
-    grid-row: 2;
+    grid-column: 2;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: $gap-space;
     width: 99%;
     margin: 0 auto;
+    margin-top: $secondnav-width;
 }
 
 .img-content {
@@ -24,4 +28,10 @@ $gap-space: 10px;
 
 img {
     width: 230px;
+}
+
+@media (max-width: 1199.98px) { 
+    :host {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }

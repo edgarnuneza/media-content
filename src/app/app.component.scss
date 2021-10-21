@@ -1,7 +1,6 @@
 .main-content {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 10fr;
     row-gap: 0.2em;
     height: 100%;
     // grid-template-rows: repeat(12, minmax(0, 1fr));
