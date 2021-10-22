@@ -35,3 +35,24 @@ img {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
+
+@media (max-width: 1199.98px) { 
+    :host {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 991.98px) {
+    :host {
+        grid-column: 1;
+        margin-top: 0px;
+        grid-template-columns: 1fr 1fr 1fr ;
+        // margin-top: $mainnav-height + $secondnav-width;
+    }
+}
+
+@media (max-width: 575.98px) { 
+    :host {
+        grid-template-columns: 1fr;
+    }
+}
