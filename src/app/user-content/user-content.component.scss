@@ -3,6 +3,7 @@
 @import '../../styles/base/general';
 
 $backgroundColor: rgb(247, 247, 247);
+$contentWidth: 97%;
 
 :host {
     display: block;
@@ -12,7 +13,7 @@ $backgroundColor: rgb(247, 247, 247);
 }
 
 .header {
-    width: 97%;
+    width: $contentWidth;
     margin: 1em auto;
     display: flex;
     justify-content: space-between;
@@ -31,7 +32,7 @@ $backgroundColor: rgb(247, 247, 247);
     box-sizing: border-box;
     padding: 1.3rem 1rem 0.8rem 1.5rem;
     background-color: $primaryColor;
-    width: 97%;
+    width: $contentWidth;
     margin: 0 auto;
     margin-top: 0.8em;
     margin-bottom: 0.8em;
@@ -56,6 +57,7 @@ $backgroundColor: rgb(247, 247, 247);
     text-overflow:ellipsis;
     color: rgb(119, 118, 136);
     margin-bottom: 0.5em;
+    width: 99%;
 }
 
 .operation {
@@ -68,7 +70,31 @@ $backgroundColor: rgb(247, 247, 247);
         &:hover {
             cursor: pointer;
         }
-        
     }
 }
 
+@media (max-width: 991.98px) {
+
+    :host {
+        margin-top: 0px;
+    }
+
+    .table-row {
+        grid-template-columns: 0.7fr 1fr 1fr 1fr 0.5fr 0.5fr;
+    }
+    // .table-row.titles {
+    //     display: none;
+    // }
+
+    // .inf-hide {
+    //     display: none;
+    // }
+
+    // .name::before {
+    //     content: "Nombre de usuario: ";
+    // }
+
+    // .table-row {
+    //     display: block;
+    // }
+}
