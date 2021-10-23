@@ -1,11 +1,12 @@
 <div><img #menubtn class="collapsible" src="../../assets/icons/list.svg" alt=""></div>
 
 <ul #options class="list-options">
-    <li class="navbar-option main-font selected"> <a routerLink="media">Media</a> </li>
-    <li class="navbar-option main-font"> <a routerLink="users">Users</a> </li>
-    <li class="navbar-option main-font">Admin</li>
-    <ul>
-        <li class="navbar-option main-font">Users</li>
-    </ul>
+    <a routerLink="media">
+        <li class="navbar-option main-font selected"> Media </li>
+    </a>
+    <li class="navbar-option main-font">Subir</li>
+    <a routerLink="users">
+        <li class="navbar-option main-font"> Users </li>
+    </a>
     <li class="navbar-option main-font">Cerrar sesión</li>
 </ul>
