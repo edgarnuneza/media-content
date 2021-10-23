@@ -11,6 +11,17 @@
     background-color: red;
 }
 
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: $secondnav-width;
+    grid-column: 1/3;
+}
+
+.navbar-custom {
+    background-color: rgb(101, 150, 243);
+}
+
 p{
     display: block;
 }

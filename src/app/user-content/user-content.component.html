@@ -1,6 +1,6 @@
 <div class="header">
     <h1 class="title1">Lista de usuarios</h1>
-    <button class="btn">Agregar usuario</button>
+    <button class="btn" (click)="updateUser()">Agregar usuario</button>
 </div>
 
 <ul class="user-list">
@@ -12,13 +12,24 @@
         <div class="col-title column-name main-font">Privilegio</div>
         <div class="col-title column-name main-font">Operaciones</div>
     </li>
-    <li *ngFor="let user of users" class="table-row">
-        <div class="value font-2 name">{{ user.userName }}</div>
-        <div class="value font-2 inf-hide">{{ user.name }} {{ user.lastName }}</div>
-        <div class="value font-2 inf-hide">{{ user.email }}</div>
-        <div class="value font-2 inf-hide">{{ getDate(user.createdAt) }}</div>
-        <div class="value font-2 inf-hide">{{ user.privilege }}</div>
-        <div class="value font-2 operation inf-hide"><img src="../../assets/icons/edit.svg" alt="edit"> <img
-                src="../../assets/icons/trash.svg" alt="delete"> </div>
+    <li *ngFor="let user of users; let i = index" class="table-row">
+        <div class="name-field">
+            <div class="user-img">
+                {{ getFirstLetters(user.userName, user.lastName) | uppercase }}
+            </div>
+            <div class="value font-2 username" (click)="collapsible(i + 1)">
+                <p>{{ user.userName }}</p>
+            </div>
+        </div>
+        <div [ngClass]="['name', 'value', 'font-2', 'inf-hide', createClassName(i + 1)]">{{ user.name }} {{
+            user.lastName }}</div>
+        <div [ngClass]="['email', 'value', 'font-2', 'inf-hide', createClassName(i + 1)]">{{ user.email }}</div>
+        <div [ngClass]="['date', 'value', 'font-2', 'inf-hide', createClassName(i + 1)]">{{ getDate(user.createdAt) }}
+        </div>
+        <div [ngClass]="['privilege', 'value', 'font-2', 'inf-hide', createClassName(i + 1)]">{{ user.privilege }}</div>
+        <div [ngClass]="['value', 'font-2', 'operation', 'inf-hide', createClassName(i + 1)]">
+            <img src="../../assets/icons/edit.svg" alt="edit" />
+            <img src="../../assets/icons/trash.svg" alt="delete" />
+        </div>
     </li>
 </ul>

@@ -25,4 +25,11 @@ export class MainNavbarComponent implements OnInit {
 
   }
 
+  changeOption(e: Event) {
+    const options = this.elementRef.nativeElement.querySelectorAll(".navbar-option");
+
+
+
+  }
+
 }

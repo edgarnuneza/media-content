@@ -9,6 +9,9 @@ import { UserContentComponent } from './user-content/user-content.component';
 import { LoginComponent } from './login/login.component';
 import { ImageModalComponent } from './image-modal/image-modal.component';
 import { UserModalComponent } from './user-modal/user-modal.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UploadComponent } from './upload/upload.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,10 +22,13 @@ import { UserModalComponent } from './user-modal/user-modal.component';
     UserContentComponent,
     LoginComponent,
     ImageModalComponent,
-    UserModalComponent
+    UserModalComponent,
+    UploadComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
