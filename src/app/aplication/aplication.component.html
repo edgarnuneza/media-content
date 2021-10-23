@@ -1,10 +1,7 @@
-<div class="main-content">
+<div class="main-content" [ngSwitch]="currentComponent">
     <app-second-navbar></app-second-navbar>
-    <app-main-navbar></app-main-navbar>
-    <app-upload></app-upload>
-    <!-- <app-media-content></app-media-content> -->
-    <!-- <app-user-content></app-user-content> -->
-    <router-outlet></router-outlet>
+    <app-main-navbar (notify)="onNotify($event)"></app-main-navbar>
+    <app-upload *ngSwitchCase="'subir'"></app-upload>
+    <app-media-content *ngSwitchCase="'media'"></app-media-content>
+    <app-user-content *ngSwitchCase="'users'"></app-user-content>
 </div>
-<!-- <app-image-modal></app-image-modal>
-<app-user-modal></app-user-modal> -->

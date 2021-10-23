@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AplicationComponent implements OnInit {
 
-  constructor() { }
+  currentComponent!: string;
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+    this.currentComponent = "media";
+  }
+
+  onNotify(value: any) {
+    this.currentComponent = value;
+    console.log(this.currentComponent);
   }
 
 }

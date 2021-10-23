@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { IMAGES } from '../mock-images';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-media-content',
@@ -8,15 +9,23 @@ import { IMAGES } from '../mock-images';
 })
 
 export class MediaContentComponent implements OnInit {
-  images = IMAGES;
+  images: string[];
   totalColumns!: number;
 
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) {
-
+  constructor(private renderer: Renderer2, private elementRef: ElementRef, private imagesService: UsersService) {
+    this.images = [];
   }
 
   ngOnInit(): void {
-    this.placeImages();
+    this.imagesService.getImages().subscribe((res) => {
+      console.log("funciono");
+      console.log(res);
+      this.getImagePath(res);
+    }, (res) => {
+      console.log("Se fallo al cargar las imagenes"),
+        console.log(res);
+    });
+    // this.placeImages();
   }
 
   ngAfterViewInit(): void {
@@ -25,6 +34,13 @@ export class MediaContentComponent implements OnInit {
       this.placeImages();
     });
     // this.removeImages();
+  }
+
+  getImagePath(img: any) {
+    for (let i of img) {
+      console.log(i.nameFile);
+      this.images.push(i.nameFile);
+    }
   }
 
   getTotalColumns(): number {

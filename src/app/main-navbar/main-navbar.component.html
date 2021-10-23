@@ -1,12 +1,14 @@
 <div><img #menubtn class="collapsible" src="../../assets/icons/list.svg" alt=""></div>
 
 <ul #options class="list-options">
-    <a routerLink="media">
-        <li class="navbar-option main-font selected"> Media </li>
+    <a (click)="notify.emit('media')">
+        <li class="navbar-option main-font"> Media </li>
     </a>
-    <li class="navbar-option main-font">Subir</li>
-    <a routerLink="users">
+    <a (click)="notify.emit('subir')">
+        <li class="navbar-option main-font">Subir</li>
+    </a>
+    <a (click)="notify.emit('users')">
         <li class="navbar-option main-font"> Users </li>
     </a>
-    <li class="navbar-option main-font">Cerrar sesión</li>
+    <li class="navbar-option main-font" (click)="closeSesion()">Cerrar sesión</li>
 </ul>

@@ -3,6 +3,7 @@ import { User } from '../user';
 import { USERS } from '../mock-users';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserModalComponent } from '../user-modal/user-modal.component';
+import { UsersService } from '../services/users.service';
 
 
 @Component({
@@ -11,16 +12,24 @@ import { UserModalComponent } from '../user-modal/user-modal.component';
   styleUrls: ['./user-content.component.scss'],
 })
 export class UserContentComponent implements OnInit {
-  users = USERS;
+  users!: any;
   //validatingForm!: FormGroup;
 
-  constructor(private render: Renderer2, private elementRef: ElementRef, public matDialog: MatDialog) { }
+  constructor(private render: Renderer2, private elementRef: ElementRef, public matDialog: MatDialog, private userService: UsersService) { }
 
   ngOnInit(): void {
+    this.userService.get().subscribe((res) => {
+      this.users = res;
+      this.users.createdAt = new Date(this.users.createdAt);
 
+    }, (res) => {
+      console.log(res);
+      console.log("fallo");
+    });
   }
 
-  getDate(date: Date) {
+  getDate(dat: any) {
+    let date = new Date(dat);
     let months: string[] = [
       'Ene',
       'Feb',
@@ -62,12 +71,7 @@ export class UserContentComponent implements OnInit {
 
   openModal() {
     const dialogConfig = new MatDialogConfig();
-    // The user can't close the dialog by clicking outside its body
     dialogConfig.disableClose = false;
-    // dialogConfig.id = "modal-component";
-    // dialogConfig.height = "350px";
-    // dialogConfig.width = "600px";
-    // https://material.angular.io/components/dialog/overview
     const modalDialog = this.matDialog.open(UserModalComponent, dialogConfig);
   }
 
