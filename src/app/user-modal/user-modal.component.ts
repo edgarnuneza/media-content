@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { MatDialogRef } from '@angular/material/dialog';
-
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-modal',
@@ -9,13 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<UserModalComponent>) { }
 
   ngOnInit(): void {
   }
 
-  close(): void {
-    //this.dialogRef.close();
+  closeModal() {
+    this.dialogRef.close();
   }
-
 }

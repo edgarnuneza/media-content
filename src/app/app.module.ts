@@ -13,6 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { UploadComponent } from './upload/upload.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,15 +25,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserContentComponent,
     LoginComponent,
     ImageModalComponent,
-    UserModalComponent,
     UploadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [UserModalComponent]
 })
 export class AppModule { }
