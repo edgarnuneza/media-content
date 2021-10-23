@@ -38,8 +38,8 @@ export class MediaContentComponent implements OnInit {
 
   getImagePath(img: any) {
     for (let i of img) {
-      console.log(i.nameFile);
-      this.images.push(i.nameFile);
+      console.log(`https://thewebgun.com${i.pathThumbnail}`);
+      this.images.push(`https://thewebgun.com${i.pathThumbnail}`);
     }
   }
 
