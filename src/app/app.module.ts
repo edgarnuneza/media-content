@@ -15,6 +15,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+
+import { FormsModule } from '@angular/forms';
+import { AplicationComponent } from './aplication/aplication.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +29,17 @@ import { MatDialogModule } from '@angular/material/dialog';
     UserContentComponent,
     LoginComponent,
     ImageModalComponent,
-    UploadComponent
+    UploadComponent,
+    AplicationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

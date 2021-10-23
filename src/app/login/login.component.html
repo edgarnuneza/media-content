@@ -2,17 +2,23 @@
     <h1 class="title1">Ingresar</h1>
 
     <div>
-        <label for="email">Email Address</label>
-        <input id="email" class="inp" type="text" placeholder="Enter email" />
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input id="password" class="inp" type="password" placeholder="Enter password" />
+        <label for="user-name">Email Address</label>
+        <input [(ngModel)]="userName" id="user-name" class="inp" type="text" placeholder="Enter email" />
     </div>
 
-    <input class="btn-primary btn" type="submit" value="Ingresar" />
+    <div>
+        <label for="password">Password</label>
+        <input [(ngModel)]="password" id="password" class="inp" type="password" placeholder="Enter password" />
+    </div>
+
+    <button class="btn-primary btn" (click)="login()">Ingresar</button>
 
     <p class="register">
         ¿Aún no tienes cuenta? <a href="registro.html">Registrate aquí</a>
     </p>
+
+    <form action="" method="get">
+        <input type="text">
+        <input type="submit" value="subir">
+    </form>
 </div>

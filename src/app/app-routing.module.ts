@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { MediaContentComponent } from './media-content/media-content.component';
+import { LoginComponent } from './login/login.component';
+import { AplicationComponent } from './aplication/aplication.component';
 import { UserContentComponent } from './user-content/user-content.component';
 
 
 const routes: Routes = [
-  { path: '', component: MediaContentComponent },
-  { path: 'media', component: MediaContentComponent },
-  { path: 'users', component: UserContentComponent }
+  // { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'aplication', component: AplicationComponent },
+  { path: 'aplication/users', component: UserContentComponent }
 ];
 
 @NgModule({
