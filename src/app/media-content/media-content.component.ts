@@ -9,11 +9,11 @@ import { UsersService } from '../services/users.service';
 })
 
 export class MediaContentComponent implements OnInit {
-  images: string[];
+  images = IMAGES;
   totalColumns!: number;
 
   constructor(private renderer: Renderer2, private elementRef: ElementRef, private imagesService: UsersService) {
-    this.images = [];
+    // this.images = IMAGES;
   }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class MediaContentComponent implements OnInit {
       console.log("Se fallo al cargar las imagenes"),
         console.log(res);
     });
-    // this.placeImages();
+    this.placeImages();
   }
 
   ngAfterViewInit(): void {
@@ -33,7 +33,6 @@ export class MediaContentComponent implements OnInit {
       this.removeImages();
       this.placeImages();
     });
-    // this.removeImages();
   }
 
   getImagePath(img: any) {
@@ -68,7 +67,7 @@ export class MediaContentComponent implements OnInit {
       this.renderer.addClass(imgElement, 'image-card');
       this.renderer.appendChild(document.querySelector(`#column-${numColumn}`), imgElement);
       this.renderer.listen(imgElement, 'click', () => {
-        alert("Hola");
+        //
       });
     }
 
